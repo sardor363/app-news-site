@@ -4,6 +4,7 @@ import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.data.annotation.CreatedBy;
+import org.springframework.data.annotation.LastModifiedBy;
 import sardor.uz.appnewssite.entity.User;
 
 import javax.persistence.*;
@@ -28,6 +29,10 @@ public abstract class AbsEntity {
     @JoinColumn(updatable = false)
     @CreatedBy
     @ManyToOne(fetch = FetchType.LAZY)
-    private User user;
+    private User createdBy;
+
+    @LastModifiedBy
+    @ManyToOne(fetch = FetchType.LAZY)
+    private User updatedBy;
 
 }
