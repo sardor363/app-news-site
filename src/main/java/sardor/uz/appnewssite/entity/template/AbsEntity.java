@@ -26,7 +26,7 @@ public abstract class AbsEntity {
     @UpdateTimestamp
     private Timestamp updatedAt;
 
-    @JoinColumn(updatable = false)
+    @JoinColumn(updatable = false )
     @CreatedBy
     @ManyToOne(fetch = FetchType.LAZY)
     private User createdBy;
